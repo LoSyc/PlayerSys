@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/css/judgetable.css"> 
+<link rel="stylesheet" type="text/css" href="../assets/css/common.css"> 
+<script src="../assets/js/jquery-1.8.3.min.js"></script> 
+<style type="text/css">
+ ul{
+ 		list-style: none;
+ }
+
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="mod-main mod-comm lefta-box" id="order02">
+        		<div class="mt">
+	<ul class="taborder">
+		<li>
+			<div class="tyies-t">
+				<strong class="ftx-01">全部项目信息</strong><b></b>
+			</div>
+			
+		</li>
+	</ul>
+	
+				</div>        		
+<div class="mc">
+        			<table class="tb-void">
+        				<colgroup>
+	<col width="290"/>
+	<col width="90"/>
+	<col width="110"/>
+	<col width="100"/>
+	<col width="100"/>
+	<col width="130" />
+</colgroup>
+<thead>
+	<tr>
+		<th >项目名</th>
+		<th >组别</th>
+		<th >赛事级别</th>
+		<th >举行时间</th>
+		<th >操作</th>
+	</tr>
+</thead>
+<%
+		var i = 0;
+		for(item in pros){
+	%>    
+ 		
+<tbody id="tb-8559222036" class="parent-8559078657">
+	
+       
+        <tr id="track8559222036" oty="0,1,70" class="tr-td">
+            <td>
+            	${item.pro_name!}
+            </td>
+            <td>
+            	${item.category_name!}
+            </td>
+        	<td>
+        		${item.schedule_name!}
+        	</td>
+            
+            <td>
+            	${item.time!}
+            </td>
+            
+            <td id="operate8559222036" class="order-doi" width="100" >
+        	  
+            <span id="pay-button-8559222036" state=""></span>
+            <a target="_blank" href="http://order.jd.com/normal/item.action?orderid=8559222036&PassKey=F62F983A988714E281B520FBBD793020" clstag='click|keycount|orderinfo|order_check'>查看</a><span id="order_comment"></span><span class="pop-recycle-a">|<a href='javascript:void(0)' clstag='click|keycount|orderinfo|order_del' onclick="ensureMoveOrderToRecycle(8559222036,'B065732BF2D0104FC8CDB4A829F3783D');">删除</a></span><span id='doi8559222036' ><br/></span><a href='http://myjd.jd.com/repair/ordersearchlist.action?searchString=8559222036' target='_blank' clstag='click|keycount|orderinfo|order_repair'>申请返修/退换货</a>
+            <a class="btn-again" clstag="click|keycount|orderlist|buy" href="http://cart.jd.com/cart/dynamic/reBuyForOrderCenter.action?wids=283592&nums=1&rid=1429102204473" target="_blank">还要买</a>
+            
+            </td>
+        </tr>
+        
+    </tbody>
+  <%
+				i++;
+				}
+			%>
+
+</table>
+        		</div>
+        		</div>
+	
+</body>
+</html>

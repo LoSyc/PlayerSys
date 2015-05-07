@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="../assets/css/projectschedule01.css" rel="stylesheet">
+ 	<link href="../assets/css/projectschedule02.css" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="col_lm"> 
+     <div class="mod_sch_playoffs mod js_floating"> 
+     <div class="wc_sch sch_green"> 
+     <div class="wctable_sch_title">
+      <h2><i class="en">编号</i></h2>
+     </div> 
+     <table class="wctable wctable_sch"> 
+      <colgroup>
+       <col class="tb_block" /> 
+       <col class="tb_col1" /> 
+       <col class="tb_col2" /> 
+       <col class="tb_col3" /> 
+       <col class="tb_col4" /> 
+       <col class="tb_col5" /> 
+       <col class="tb_col6" /> 
+       <col class="tb_col7" /> 
+      </colgroup>
+      <thead> 
+       <tr> 
+        <th></th> 
+        <th></th> 
+        <th>姓名</th> 
+        <th>性别</th> 
+        <th>年龄</th> 
+        <th>身高</th> 
+        <th>体重</th> 
+        <th>电话</th> 
+        <th>参赛单位</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+	       <tr class="tr01"> 
+		        <td class="tb_block"></td> 
+		        <td class="tb_col1">${unitview.athl_id}</td>
+				<td>${unitview.athl_name}</td>
+				<td>${unitview.athl_sex}</td>
+				<td>${unitview.athl_age}</td>
+				<td>${unitview.athl_height}</td>
+				<td>${unitview.athl_weight}</td>
+				<td>${unitview.athl_phone}</td>
+				<td>${unitview.unit_name}</td>
+	       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+   </div> 
+  </div>
+</body>
+</html>

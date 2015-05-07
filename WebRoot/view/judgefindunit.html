@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/css/judgetable.css"> 
+<link rel="stylesheet" type="text/css" href="../assets/css/common.css"> 
+<link rel="stylesheet" type="text/css" href="../assets/css/kkpager.css">
+<script src="../assets/js/jquery-1.8.3.min.js"></script> 
+<script src="../assets/js/kkpager.min.js"></script> 
+<style type="text/css">
+ ul{
+ 		list-style: none;
+ }
+
+</style>
+<script type="text/javascript">
+			function getParameter(name) { 
+				var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+				var r = window.location.search.substr(1).match(reg); 
+				if (r!=null) return unescape(r[2]); return null;
+			}
+
+//init
+$(function(){
+	var totalPage = ${pageNum!};
+	var totalRecords = ${totalRecords!};
+	var pageNo = getParameter('pno');
+	if(!pageNo){
+		pageNo = 1;
+	}
+	//初始化分页控件
+	//有些参数是可选的，比如lang，若不传有默认值
+	kkpager.init({
+		pno : pageNo,
+		//总页码
+		total : totalPage,
+		//总数据条数
+		totalRecords : totalRecords,
+		//链接前部
+		hrefFormer : '/findAllUnit',
+		//链接尾部
+		hrefLatter : '',
+		getLink : function(n){
+			return this.hrefFormer + this.hrefLatter + "?pno="+n;
+		},
+		lang : {
+			prePageText : '上一页',
+			nextPageText : '下一页',
+			totalPageBeforeText : '共',
+			totalPageAfterText : '页',
+			totalRecordsAfterText : '条数据',
+			gopageBeforeText : '转到',
+			gopageButtonOkText : '确定',
+			gopageAfterText : '页',
+			buttonTipBeforeText : '第',
+			buttonTipAfterText : '页'
+		}
+	});
+	//生成
+	kkpager.generPageHtml();
+});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="mod-main mod-comm lefta-box" id="order02">
+        		<div class="mt">
+	<ul class="taborder">
+		<li>
+			<div class="tyies-t">
+				<strong class="ftx-01">全部参赛单位</strong>
+			</div>
+			
+		</li>
+	</ul>
+	
+</div>        		
+<div class="mc">
+       <table class="tb-void">
+       <colgroup>
+	<col width="290"/>
+	<col width="90"/>
+	<col width="110"/>
+	<col width="100"/>
+	<col width="100"/>
+	<col width="130" />
+</colgroup>
+<thead>
+	<tr>
+		<th >参赛单位</th>
+		<th >编号</th>
+		<th >电话</th>
+		<th >参赛人数</th>
+		<th >金牌人数</th>
+		<th >银牌人数</th>
+		<th >铜牌人数</th>
+		<th >违规人数</th>
+		
+	</tr>
+</thead>
+
+	<%
+		var i = 0;
+		for(item in uvs){
+	%>    								                                    						            					    								    										    	
+    	<tbody id="tb-8559222036" class="parent-8559078657">
+	
+      
+        <tr id="track8559222036" oty="0,1,70" class="tr-td">
+            <td>
+            	${item.name!}
+            </td>
+            <td>
+            	${item.id!}
+            </td>
+        	<td>
+        		${item.phone!}
+        	</td>
+            <td>
+                ${item.population!}
+            </td>
+            
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            
+            
+        </tr>
+    </tbody>
+              <%
+				i++;
+				}
+			%>
+        </table>
+        	</div>
+        </div>
+                    <div id="kkpager"></div> 
+	
+</body>
+</html>

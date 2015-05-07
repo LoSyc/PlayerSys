@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="../assets/css/datatables.css" rel="stylesheet">
+    <link href="../assets/css/datatablestyle.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+    
+    <style>
+    	.tableMain{
+    		margin:50px;
+    	}
+    	
+    	
+    	input[type="checkbox"]{
+    		opacity:0;
+    	
+    	}
+    	input[type="checkbox"] + span:before{
+    		content: "";
+		    width: 18px;
+		    height: 18px;
+		    display: inline-block;
+		    vertical-align: middle;
+		    margin-right: 10px;
+		    margin-left: 20px;
+		    background: white;
+		    border-radius: 3px;
+		    border: 1px solid #c8c8c8; 
+    	}
+    	
+    	input[type="checkbox"]:checked + span:before {
+    	
+  			background: #007aff url("../assets/img/checkmark.png") no-repeat center center;
+ 			 border-color: #007aff; 
+ 		}
+ 		
+ 		 
+ 		.icon{
+ 			color:#007aff;
+ 		}
+ 		
+ 		.icon:hover{
+ 			color:#000000;
+ 		}
+ 		
+ 		button{
+		  background-color: #AEDEF4;
+		  width:100px;
+		  height:40px;
+		  color: white;
+		  border: none;
+		  box-shadow: none;
+		  font-size: 12px;
+		  font-weight: 30;
+		  border-radius: 3px;
+		  padding: 10px 25px;
+		  margin: 26px 5px 0 5px;
+		  cursor: pointer; }
+		  button:focus{
+		    outline: none; }
+		  button:hover{
+		    background-color: #a1d9f2; }
+		  button:active{
+		    background-color: #81ccee; }
+    
+    </style>
+    
+    <script type="text/javascript">
+     	$(function(){
+     	
+   	 		$("#dataTable1").dataTable({
+		      "sPaginationType": "full_numbers",
+		      bAutoWidth:true,
+		      aoColumnDefs: [
+		        {
+		          bSortable: false,
+		          aTargets: [0, -1]
+		        }
+		      ]
+		    });
+		    
+    $('.table').each(function() {
+      return $(".table #checkAll").click(function() {
+        if ($(".table #checkAll").is(":checked")) {
+          return $(".table input[type=checkbox]").each(function() {
+            return $(this).prop("checked", true);
+          });
+        } else {
+          return $(".table input[type=checkbox]").each(function() {
+            return $(this).prop("checked", false);
+          });
+        }
+      });
+    });
+});
+     	 </script>  
+</head>
+<body>
+<div class="tableMain">
+	
+<table class="table table-bordered table-striped" id="dataTable1">
+<thead>
+  <th class="check-header">
+    <label><input id="checkAll" name="checkAll" type="checkbox"><span></span></label>
+  </th>
+  <th>
+   	 运动员编号
+  </th>
+  <th>
+   	 姓名
+  </th>
+  <th class="">
+  	 参赛项目
+  </th>
+  <th class="">
+           赛事级别
+  </th>
+  <th class="">
+    	组别
+  </th>
+  <th class="">
+    	参赛时间
+  </th>
+  <th class="">
+    	名次
+  </th>
+  <th class="">
+    	成绩
+  </th>
+  <th class="">
+    	裁判
+  </th>
+ 
+</thead>
+<tbody>
+	<%
+		for(item in unitview){
+	%>
+    <tr class="">
+        <td class="check " style="">
+          <label><input name="" type="checkbox" value=""><span></span></label>
+        </td>
+        
+			                    
+        <td style="" class="">
+        	${item.athl_id!}
+        </td>
+        <td style="text-align:center;width:10%;">
+        	${item.athl_name!}
+        </td>
+        <td class="" style="text-align:center;width:15%;">
+        	${item.pro_name!}
+        </td>
+        <td class="" style="text-align:center;">
+          ${item.schedule_name!}
+        </td>
+        <td class="" style="">
+         ${item.category_name!}
+        </td>
+        <td class="" style="text-align:center;width:10%;">
+          ${item.time!}
+        </td>
+        <td class="" style="text-align:center;width:5%;">
+          ${item.rank!}
+        </td>
+        <td class="" style="text-align:center;">
+          ${item.score!}
+        </td>
+        <td class="" style="text-align:center;">
+          ${item.judge_name!}
+        </td>
+       
+  </tr>
+
+
+ 
+	<%
+		}
+	%>
+
+ 
+</tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="../assets/css/projectschedule01.css" rel="stylesheet">
+ 	<link href="../assets/css/projectschedule02.css" rel="stylesheet">
+</head>
+<body>
+	<div class="col_lm"> 
+   
+   	<%
+   	var i =0;
+      for(item in athleteview){
+    %>  
+     <div class="mod_sch_playoffs mod js_floating"> 
+   	 <%
+      	if(item.schedule_name == "预赛"){
+    %>
+    	<div class="wc_sch sch_green"> 
+    <% 
+    	}else if(item.schedule_name == "准决赛"){
+     %>
+     	<div class="wc_sch sch_violet"> 
+     <%
+     	}else{
+     %>
+     	<div class="wc_sch sch_red"> 
+     <%
+     	}
+     %>
+     <div class="wctable_sch_title">
+      <h2><i class="en">${item.schedule_name}</i></h2>
+     </div> 
+     <table class="wctable wctable_sch"> 
+      <colgroup>
+       <col class="tb_block" /> 
+       <col class="tb_col1" /> 
+       <col class="tb_col2" /> 
+       <col class="tb_col3" /> 
+       <col class="tb_col4" /> 
+       <col class="tb_col5" /> 
+       <col class="tb_col6" /> 
+       <col class="tb_col7" /> 
+      </colgroup>
+      <thead> 
+       <tr> 
+        <th></th> 
+        <th></th> 
+        <th>项目</th> 
+        <th>时间</th> 
+        <th>编号</th> 
+        <th>赛场</th> 
+        <th>裁判</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+	       <tr class="tr01"> 
+		        <td class="tb_block"></td> 
+		        <td class="tb_col1">${item.category_name}</td> 
+		        <td>${item.project_name}</td> 
+		        <td>${item.time}</td> 
+		        <td>${item.id}</td> 
+		        <td>田径场</td> 
+		        <td>${judges[i].name}</td> 
+	       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+   </div> 
+   <% 
+   i++;
+	   }
+	%>
+  </div>
+</body>
+</html>

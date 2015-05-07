@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <link href="../assets/css/insertathletestyle.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.8.3.min.js"></script>
+    
+  
+</head>
+<body>
+
+
+<div id="loginalert" style="display:block;top:20px;left:32%;margin-left:0px;_margin-left:20px;">
+	
+	<div class="pd20 loginpd">
+		<div class="loginwrap">
+			<h3><span class="fl">请填写</span><span class="login_warning">运动员成绩相关信息</span><div class="clear"></div></h3>
+			<form action="/insertAthleteScore?id=${judgeId!}" method="post" id="login_form">
+				<div class="logininput">
+					<ul>
+						<li>&nbsp;&nbsp;运动员编号:
+                                <input type="text" name="athlid" class="athl_id" value="" placeholder="运动员编号" />
+                            </li>
+                            <li>参&nbsp;&nbsp;赛&nbsp;&nbsp;项&nbsp;&nbsp;目:
+                                <input type="text" name="proname" class="pro_name" value="" placeholder="参赛项目" />
+                            </li>
+                            <li>赛&nbsp;&nbsp;事&nbsp;&nbsp;级&nbsp;&nbsp;别:
+                                <input type="text" name="schedulename" class="schedule_name" value="" placeholder="赛事级别" />
+                            </li>
+                            <li>组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:
+                                <input type="text" name="categoryname" class="category_name" value="" placeholder="组别" />
+                            </li>
+                            <li>名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次:
+                                <input type="text" name="rank" class="rank" value="" placeholder="名次" />
+                            </li>
+                            <li>成&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;绩:
+                                <input type="text" name="score" class="score" value="" placeholder="成绩" />
+                            </li>
+                      
+					</ul>
+				</div>
+				<div class="loginbtn">
+					<div class="loginsubmit fl"><input type="submit" value="提交" class="btn" /></div>
+					<div class="clear"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	
+</div>
+
+
+
+
+</body>
+</html>

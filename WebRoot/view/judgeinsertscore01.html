@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/css/judgetable.css"> 
+<link rel="stylesheet" type="text/css" href="../assets/css/common.css"> 
+<script src="../assets/js/jquery-1.8.3.min.js"></script> 
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="mod-main mod-comm lefta-box" id="order02">
+        		<div class="mt">
+	<ul class="taborder">
+		<li>
+			<div class="tyies-t">
+				<strong class="ftx-01">全部订单</strong><b></b>
+			</div>
+			<div class="tyies-c">
+				<div class="close"></div>
+				    				    					<div class="filter-item">
+    						<span class="label">不限：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=&d=1&s=4096" target="_self">全部类型</a>
+    								    							    						</div>
+    					</div>
+    				    					<div class="filter-item">
+    						<span class="label">普通：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=0-6-8-9-10-11-13-15-16-17-18-19-21-22-23-24-25-32-33-41-42-49-54-56&d=1&s=4096" target="_self">实物商品</a>
+    								    							    						</div>
+    					</div>
+    				    					<div class="filter-item">
+    						<span class="label">旅游：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=35-83&d=1&s=4096" target="_self">机票</a>
+    								    									<a href="list.action?t=39&d=1&s=4096" target="_self">酒店</a>
+    								    									<a href="list.action?t=45&d=1&s=4096" target="_self">租车</a>
+    								    									<a href="list.action?t=47&d=1&s=4096" target="_self">度假</a>
+    								    									<a href="list.action?t=44&d=1&s=4096" target="_self">景点</a>
+    								    									<a href="list.action?t=46&d=1&s=4096" target="_self">火车</a>
+    								    							    						</div>
+    					</div>
+    				    					<div class="filter-item">
+    						<span class="label">充值：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=34-62&d=1&s=4096" target="_self">游戏</a>
+    								    									<a href="list.action?t=37&d=1&s=4096" target="_self">手机充值</a>
+    								    							    						</div>
+    					</div>
+    				    					<div class="filter-item">
+    						<span class="label">票务：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=43&d=1&s=4096" target="_self">电影票</a>
+    								    									<a href="list.action?t=53&d=1&s=4096" target="_self">演出票</a>
+    								    							    						</div>
+    					</div>
+    				    					<div class="filter-item">
+    						<span class="label">数字：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=38&d=1&s=4096" target="_self">电子书</a>
+    								    									<a href="list.action?t=58&d=1&s=4096" target="_self">数字音乐</a>
+    								    									<a href="list.action?t=57&d=1&s=4096" target="_self">应用商店</a>
+    								    							    						</div>
+    					</div>
+    				    					<div class="filter-item">
+    						<span class="label">其他：</span>
+    						<div class="item-con">
+    							    								    									<a href="list.action?t=36&d=1&s=4096" target="_self">彩票</a>
+    								    									<a href="list.action?t=28-29-201&d=1&s=4096" target="_self">团购</a>
+    								    									<a href="list.action?t=48-64-65&d=1&s=4096" target="_self">保险</a>
+    								    									<a href="list.action?t=2&d=1&s=4096" target="_self">夺宝岛</a>
+    								    							    						</div>
+    					</div>
+    										</div>
+		</li>
+	</ul>
+	<div class="extra-r">
+				<div class="search-01">
+			<input id="ip_keyword" name="" type="text" class="s-itxt" value="商品名称、商品编号、订单编号"
+	            onfocus="if (this.value==this.defaultValue) this.value=''" onblur="if (this.value=='') this.value=this.defaultValue" onkeydown="javascript:if(event.keyCode==13) OrderSearch('ip_keyword');" />
+	        <!--input name="" type="button" value="查 询" class="btn-13" onclick="OrderSearch('ip_keyword')" clstag="click|keycount|orderinfo|search"/-->
+	        <a href="javascript:;" class="btn-13" onclick="OrderSearch('ip_keyword')" clstag="click|keycount|orderinfo|search">查 询</a>
+		</div>
+	</div>
+</div>        		<div class="mc">
+        			<table class="tb-void">
+        				<colgroup>
+	<col width="290"/>
+	<col width="90"/>
+	<col width="110"/>
+	<col width="100"/>
+	<col width="100"/>
+	<col width="130" />
+</colgroup>
+<thead>
+	<tr>
+		<th >订单信息</th>
+		<th >收货人</th>
+		<th >订单金额</th>
+		<th >
+			<select id="submitDate" name="" class="sele">
+				<option value="1" selected>最近三个月</option>
+								  <option value="2">今年内</option>
+								  <option value="2014">2014年</option>
+								  <option value="2013">2013年</option>
+								  <option value="2012">2012年</option>
+								  <option value="3">2012年以前</option>
+							</select>
+		</th>
+		<th >
+			<select id="orderState" name="" class="sele">
+				<option value="4096" selected>全部状态</option>
+				<option value="1">等待付款</option>
+				<option value="32">等待自提</option>
+				<option value="128">等待收货</option>
+				<!-- <option value="0">处理中</option> -->
+				<!--<option value="2048">有效</option> -->
+				<option value="1024">已完成</option>
+				<option value="-1">已取消</option>
+			</select>
+		</th>
+		<th >操作</th>
+	</tr>
+</thead>
+
+<script type="text/javascript" language="javascript">
+    $("#submitDate").change(function () {
+        var sDate = $("#submitDate option[@selected]").val();
+        window.location = 'list.action?d='+sDate+'&s=4096&t=';
+    });
+	$("#orderState").change(function () {
+        var oState = $("#orderState option[@selected]").val();
+        window.location = 'list.action?d=1&s='+oState+'&t=';
+    });
+	$("#submitDate").val(1);
+	$("#orderState").val(4096);
+</script>    					    						            					    								    									    <tbody id="parent-8559078657">
+        <tr>
+            <td colspan="7" align="left" class="td-02"> 尊敬的客户，由于您的商品在不同库房或属于不同商家，所以您的订单被拆分为多个子订单分开配送，给您带来的不便还请谅解。 </td>
+        </tr>
+    </tbody>
+    								                                    						            					    								    										    	<tbody id="tb-8559222036" class="parent-8559078657">
+	
+        <tr class="tr-th">
+            <td colspan="6">
+                <span class="tcol1">
+                    订单编号:
+                    <a name='orderIdLinks' id='idUrl8559222036'target='_blank' href='http://order.jd.com/normal/item.action?orderid=8559222036&PassKey=F62F983A988714E281B520FBBD793020' clstag='click|keycount|orderinfo|order_num'>8559222036</a>
+                                            (子订单)
+                                        
+                              
+		    		                </span>
+
+                                    <span class="tcol2">
+                        京东
+                    </span>
+                    <span class="tcol3">
+                        <a class="btn-im" onclick="getPamsForChat()" href="#none"  title="联系客服"></a>
+                    </span>
+                            </td>
+        </tr>
+        <tr id="track8559222036" oty="0,1,70" class="tr-td">
+            <td>
+            	<div class="img-list">
+            		        		  		<a href="http://item.jd.com/283592.html" class="img-box" clstag="click|keycount|orderinfo|order_product" target="_blank"  >
+        					<img title="Nestle雀巢高钙甜奶粉袋装400g " data-lazyload="http://img10.360buyimg.com/N5/jfs/t442/288/514436849/128123/51a48bf3/5420e650Nc8fe4158.jpg" width="50" height="50" />
+        		  		</a>
+        		               	</div>
+            </td>
+            <td><div class="u-name">麦钜堂</div></td>
+        	<td>
+        		￥36.90<br />
+        		货到付款<br />
+        	            	</td>
+            <td>
+                <span class="ftx-03">2015-02-25 <br/> 19:59:21</span>
+                <input type="hidden" id="datasubmit-8559222036" value="2015-02-25 19:59:21"/>
+            </td>
+            
+            <td><span class="ftx-03">已完成</span></td>
+            
+            <td id="operate8559222036" class="order-doi" width="100" >
+        	  
+            <span id="pay-button-8559222036" state=""></span>
+            <a target="_blank" href="http://order.jd.com/normal/item.action?orderid=8559222036&PassKey=F62F983A988714E281B520FBBD793020" clstag='click|keycount|orderinfo|order_check'>查看</a><span id="order_comment"></span><span class="pop-recycle-a">|<a href='javascript:void(0)' clstag='click|keycount|orderinfo|order_del' onclick="ensureMoveOrderToRecycle(8559222036,'B065732BF2D0104FC8CDB4A829F3783D');">删除</a></span><span id='doi8559222036' ><br/></span><a href='http://myjd.jd.com/repair/ordersearchlist.action?searchString=8559222036' target='_blank' clstag='click|keycount|orderinfo|order_repair'>申请返修/退换货</a>
+            <a class="btn-again" clstag="click|keycount|orderlist|buy" href="http://cart.jd.com/cart/dynamic/reBuyForOrderCenter.action?wids=283592&nums=1&rid=1429102204473" target="_blank">还要买</a>
+            
+            </td>
+        </tr>
+    </tbody>
+
+<tbody id="tb-8559078669" class="parent-8559078657">
+	
+        <tr class="tr-th">
+            <td colspan="6">
+                <span class="tcol1">
+                    订单编号:
+                    <a name='orderIdLinks' id='idUrl8559078669'target='_blank' href='http://order.jd.com/normal/item.action?orderid=8559078669&PassKey=8597769C5E0950C86DA1DC4F08C5A052' clstag='click|keycount|orderinfo|order_num'>8559078669</a>
+                                            (子订单)
+                                        
+                              
+		    		                </span>
+
+                                    <span class="tcol2">
+                        京东
+                    </span>
+                    <span class="tcol3">
+                        <a class="btn-im" onclick="getPamsForChat()" href="#none"  title="联系客服"></a>
+                    </span>
+                            </td>
+        </tr>
+        <tr id="track8559078669" oty="0,1,70" class="tr-td">
+            <td>
+            	<div class="img-list">
+            		        		  		<a href="http://item.jd.com/1324615.html" class="img-box" clstag="click|keycount|orderinfo|order_product" target="_blank"  >
+        					<img title="HTC Desire 820mu 镶蓝时尚白 移动联通4G手机 双卡双待" data-lazyload="http://img10.360buyimg.com/N5/jfs/t565/30/1157430182/108739/af0eec25/54b87094N778740e8.jpg" width="50" height="50" />
+        		  		</a>
+        		               	</div>
+            </td>
+            <td><div class="u-name">麦钜堂</div></td>
+        	<td>
+        		￥1197.50<br />
+        		货到付款<br />
+        	            	</td>
+            <td>
+                <span class="ftx-03">2015-02-25 <br/> 19:59:21</span>
+                <input type="hidden" id="datasubmit-8559078669" value="2015-02-25 19:59:21"/>
+            </td>
+            
+            <td><span class="ftx-03">已完成</span></td>
+            
+            <td id="operate8559078669" class="order-doi" width="100" >
+        	  
+            <span id="pay-button-8559078669" state=""></span>
+            <a target="_blank" href="http://order.jd.com/normal/item.action?orderid=8559078669&PassKey=8597769C5E0950C86DA1DC4F08C5A052" clstag='click|keycount|orderinfo|order_check'>查看</a><span id="order_comment"></span><span class="pop-recycle-a">|<a href='javascript:void(0)' clstag='click|keycount|orderinfo|order_del' onclick="ensureMoveOrderToRecycle(8559078669,'BE0AB3EFE43C5BB0A18A4A21BFCDF2E7');">删除</a></span><span id='doi8559078669' ><br/></span><a href='http://myjd.jd.com/repair/ordersearchlist.action?searchString=8559078669' target='_blank' clstag='click|keycount|orderinfo|order_repair'>申请返修/退换货</a>
+            <a class="btn-again" clstag="click|keycount|orderlist|buy" href="http://cart.jd.com/cart/dynamic/reBuyForOrderCenter.action?wids=1324615&nums=1&rid=1429102204473" target="_blank">还要买</a>
+            
+            </td>
+        </tr>
+    </tbody>
+    								                                    						    					    				</table>
+        		</div>
+        		</div>
+	
+</body>
+</html>

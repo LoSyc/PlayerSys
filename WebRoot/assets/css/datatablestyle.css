@@ -1,0 +1,144 @@
+@CHARSET "UTF-8";
+
+ /*----------------------------------------------------------------------------------- */
+/*  DataTables */
+/*----------------------------------------------------------------------------------- */
+.dataTable th {
+  padding-right: 20px;
+  position: relative;
+  font-weight: normal; }
+  .dataTable th.sorting {
+    color: #007aff;
+    cursor: pointer; }
+    .dataTable th.sorting:after, .dataTable th.sorting:before {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent; }
+    .dataTable th.sorting:after {
+      top: 27px;
+      border-top: 5px solid #007aff !important; }
+    .dataTable th.sorting:before {
+      top: 19px;
+      border-bottom: 5px solid #007aff !important; }
+  .dataTable th.sorting_asc {
+    color: #007aff;
+    cursor: pointer; }
+    .dataTable th.sorting_asc:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      top: 19px;
+      border-bottom: 5px solid #007aff !important;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent; }
+  .dataTable th.sorting_desc {
+    color: #007aff;
+    cursor: pointer; }
+    .dataTable th.sorting_desc:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      top: 27px;
+      border-top: 5px solid #007aff !important;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent; }
+
+th:active {
+  outline: none; }
+
+#add-row {
+  margin-right: 0; }
+
+/*----------------------------------------------------------------------------------- */
+/*  Tables */
+/*----------------------------------------------------------------------------------- */
+.table {
+  margin-bottom: 10px; }
+  .table th {
+    font-size: 14px; }
+  .table td {
+    font-size: 14px; }
+    .table td.actions {
+      width: 90px;
+      padding-right: 0; }
+      .table td.actions .action-buttons {
+        width: 80px;
+        margin: 0; }
+        .table td.actions .action-buttons a:last-child {
+          margin-right: 0; }
+  .table tfoot > tr > td {
+    border-top: 0; }
+  .table tfoot > tr:first-child > td {
+    border-top: 1px solid #dddddd;
+    padding-top: 15px; }
+
+.boxshadow .table input[type="checkbox"] + span:before, .boxshadow .table input[type="radio"] + span:before {
+  margin-right: 0;
+  margin-left: 0; }
+
+.check {
+  width: 20px; }
+
+.check-header .sorting {
+  display: none; }
+
+.table > thead > tr > th {
+  border-bottom: 2px solid #dddddd; }
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+  vertical-align: middle; }
+
+.table-actions {
+  margin: 0 6px 0 6px; }
+  
+  .opacity .radio, .opacity .checkbox {
+  margin: 0 0 10px; }
+.opacity .radio-inline, .opacity .checkbox-inline {
+  padding-top: 9px;
+  margin-right: 20px; }
+  .opacity .radio-inline + .radio-inline, .opacity .radio-inline + .checkbox-inline, .opacity .checkbox-inline + .radio-inline, .opacity .checkbox-inline + .checkbox-inline {
+    margin-left: 0; }
+ .opacity input[type="checkbox"], .opacity input[type="radio"] {
+  display: none; }
+  .opacity input[type="checkbox"] + span:before, .opacity input[type="radio"] + span:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: -20px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #c8c8c8; } 
+  
+ .opacity input[type="checkbox"]:checked + span:before {
+  background: #007aff url("../images/checkmark.png") no-repeat center center;
+  border-color: #007aff; }
+  
+  .opacity input[type="radio"] {
+  display: none; }
+  .opacity input[type="radio"] + span {
+    position: relative; }
+    .opacity input[type="radio"] + span:before {
+      border-radius: 50%; }
+  .opacity input[type="radio"]:checked + span:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 6px;
+    left: -15px;
+    background-color: #007aff;
+    border-radius: 50%;
+    display: block; }
+    
+ 
